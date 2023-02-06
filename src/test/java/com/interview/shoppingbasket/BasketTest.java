@@ -33,6 +33,9 @@ public class BasketTest {
         basket.add("productCode", "myProduct", 10);
         basket.add("productCode2", "myProduct2", 10);
         basket.add("productCode3", "myProduct3", 10);
+        basket.add("productCode3", "myProduct3", 10);
+        basket.add("productCode3", "myProduct3", 10);
+        basket.add("productCode3", "myProduct3", 10);
 
         List<BasketItem> basketSize = basket.getItems();
 
@@ -45,7 +48,7 @@ public class BasketTest {
         assertEquals(basketSize.get(1).getQuantity(), 10);
         assertEquals(basketSize.get(2).getProductCode(), "productCode3");
         assertEquals(basketSize.get(2).getProductName(), "myProduct3");
-        assertEquals(basketSize.get(2).getQuantity(), 10);
+        assertEquals(basketSize.get(2).getQuantity(), 40);
     }
 
     @Test
