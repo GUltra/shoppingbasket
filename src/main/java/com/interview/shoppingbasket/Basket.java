@@ -10,7 +10,6 @@ public class Basket {
 
     public void add(String productCode, String productName, int quantity) {
             BasketItem basketItem = new BasketItem();
-            this.consolidateItems();
             basketItem.setProductCode(productCode);
             basketItem.setProductName(productName);
             basketItem.setQuantity(quantity);
