@@ -47,10 +47,22 @@ public class BasketTest {
         assertEquals(basketSize.get(2).getProductCode(), "productCode3");
         assertEquals(basketSize.get(2).getProductName(), "myProduct3");
         assertEquals(basketSize.get(2).getQuantity(), 10);
+
     }
 
     @Test
     void consolidateBasketTest() {
-        // Exercise - implement the unit test for consolidate items
+        Basket basket = new Basket();
+        basket.add("productCode", "myProduct", 10);
+        basket.add("productCode", "myProduct2", 10);
+        basket.add("productCode", "myProduct3", 10);
+
+        basket.consolidateItems();
+
+        List<BasketItem> basketSize = basket.getItems();
+        assertEquals(basketSize.size(),1);
+        assertEquals(basketSize.get(0).getProductCode(), "productCode");
+        assertEquals(basketSize.get(0).getProductName(), "myProduct");
+        assertEquals(basketSize.get(0).getQuantity(), 30);
     }
 }
